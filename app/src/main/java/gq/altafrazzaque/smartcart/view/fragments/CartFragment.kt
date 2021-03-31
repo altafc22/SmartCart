@@ -65,6 +65,7 @@ class CartFragment : Fragment(), CartAdapter.OnCartItemListener {
             if(fragmentView.cbCod.isChecked)
             {
                 navController.navigate(R.id.action_cartFragment_to_orderFragment)
+                productViewModel.clearCart()
             } else {
                 Snackbar.make(
                     requireView(),
