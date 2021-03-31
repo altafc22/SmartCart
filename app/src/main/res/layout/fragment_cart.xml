@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:layout_above="@+id/layoutCheckout"
+        tools:listitem="@layout/item_product_cart" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/layoutCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="start"
+        android:background="@drawable/top_rounded_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textStyle="bold"
+                android:text="Payment Mode"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+            <CheckBox
+                android:id="@+id/cbCod"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_margin="8dp"
+                android:textStyle="bold"
+                android:text="COD"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+        </LinearLayout>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <TextView
+               android:id="@+id/tvOrderTotal"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="end"
+               android:layout_margin="8dp"
+               android:textStyle="bold"
+               android:text="Total: 00 AED"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+           <Button
+               android:id="@+id/btnPlaceOrder"
+               style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="end"
+               android:layout_margin="8dp"
+               android:layout_centerVertical="true"
+               android:text="@string/place_order"
+               android:layout_alignParentEnd="true"
+               android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+       </RelativeLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

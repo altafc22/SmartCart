@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".view.fragments.OrderFragment">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="240dp"
+        android:layout_height="220dp"
+        android:scaleType="fitCenter"
+        android:id="@+id/ivOrderPlaced"
+        android:src="@drawable/order_placed" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/thanks_for_your_order"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
+
+    <Button
+        android:id="@+id/btnShopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="@string/continue_shopping"
+        />
+</LinearLayout>

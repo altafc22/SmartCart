@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">@color/b2s_main</color>
+    <color name="b2s_main">#E0457B</color>
+    <color name="b2s_main_dark">#AF335E</color>
+    <color name="teal_200">@color/b2s_main</color>
+    <color name="teal_700">@color/b2s_main_dark</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#FAFAFA</color>
+    <color name="grey_300">#CDCDCD</color>
+    <color name="darkGrey">#757575</color>
+</resources>
