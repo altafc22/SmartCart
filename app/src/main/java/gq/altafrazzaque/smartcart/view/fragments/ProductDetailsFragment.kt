@@ -72,7 +72,7 @@ class ProductDetailsFragment : Fragment() {
             val isAdded: Boolean = productViewModel.addItemToCart(product)
             if (isAdded) {
                 Snackbar.make(requireView(), product.title + " added to cart.", Snackbar.LENGTH_LONG)
-                        .setAction("Checkout") { navController.navigate(R.id.action_productListFragment_to_cartFragment) }
+                        .setAction("Checkout") { navController.navigate(R.id.action_productDetailFragment_to_cartFragment) }
                         .show()
             } else {
                 Snackbar.make(

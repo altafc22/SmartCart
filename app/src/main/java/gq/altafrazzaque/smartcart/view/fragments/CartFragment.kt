@@ -18,6 +18,8 @@ import gq.altafrazzaque.smartcart.common.MAX_PRODUCT_SELECTION
 import gq.altafrazzaque.smartcart.models.CartItem
 import gq.altafrazzaque.smartcart.viewmodel.ProductViewModel
 import kotlinx.android.synthetic.main.fragment_cart.view.*
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class CartFragment : Fragment(), CartAdapter.OnCartItemListener {
     private val TAG = "CartFragment"
@@ -59,7 +61,7 @@ class CartFragment : Fragment(), CartAdapter.OnCartItemListener {
             fragmentView.btnPlaceOrder.isEnabled = cartItems.isNotEmpty()
         })
 
-        productViewModel.getTotalPrice().observe(viewLifecycleOwner, { aDouble -> fragmentView.tvOrderTotal.text = "Total: $aDouble AED" })
+        productViewModel.getTotalPrice().observe(viewLifecycleOwner, { aDouble -> fragmentView.tvOrderTotal.text = "Total: ${roundOffDecimal(aDouble)} AED" })
 
         fragmentView.btnPlaceOrder.setOnClickListener {
             if(fragmentView.cbCod.isChecked)
@@ -106,4 +108,9 @@ class CartFragment : Fragment(), CartAdapter.OnCartItemListener {
         cartRecyclerView.adapter!!.notifyDataSetChanged()
     }
 
+    fun roundOffDecimal(number: Double): Double {
+        val df = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.FLOOR
+        return df.format(number).toDouble()
+    }
 }

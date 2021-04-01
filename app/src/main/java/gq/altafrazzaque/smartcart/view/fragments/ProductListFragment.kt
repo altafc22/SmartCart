@@ -54,6 +54,7 @@ class ProductListFragment : Fragment() , ProductListAdapter.OnProductClickListen
         productViewModel.getProducts().observe(viewLifecycleOwner,
                 { products ->
                    try {
+                       productList.clear()
                        productList.addAll(products!!)
                        productRecyclerView.adapter!!.notifyDataSetChanged()
                    } catch (ex:NullPointerException)
