@@ -1,5 +1,13 @@
 
-###SmartCart Assignment
+#SmartCart Assignment
+
+<div style="text-align:center">
+<table>
+<tr>
+<td><img src="https://github.com/altafc22/SmartCart/blob/master/screenshot/demo.gif?raw=true" alt="Smart Cart Demo" width="240"/></td>
+</tr>
+</table>
+</div>
 
 ## Task 
 Build the Shopping cart - Checkout Module with the Payment option of COD.
