@@ -18,6 +18,8 @@ import gq.altafrazzaque.smartcart.R
 import gq.altafrazzaque.smartcart.common.MAX_PRODUCT_SELECTION
 import gq.altafrazzaque.smartcart.models.CartDiffUtil
 import gq.altafrazzaque.smartcart.models.CartItem
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 
 class CartAdapter(
@@ -53,7 +55,7 @@ class CartAdapter(
 
         holder.tvProductName.text = item.product.title
         holder.tvProductQuantity.text = item.quantity.toString()
-        holder.tvProductTotal.text = "${item.product.price * item.quantity} AED"
+        holder.tvProductTotal.text = "${roundOffDecimal(item.product.price * item.quantity)} AED"
 
         val options: RequestOptions = RequestOptions()
             .centerCrop()
@@ -84,5 +86,11 @@ class CartAdapter(
     fun updateList(newList: ArrayList<CartItem>) {
         val diffResult = DiffUtil.calculateDiff(CartDiffUtil(list, newList))
         diffResult.dispatchUpdatesTo(this)
+    }
+
+    fun roundOffDecimal(number: Double): Double {
+        val df = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.FLOOR
+        return df.format(number).toDouble()
     }
 }
